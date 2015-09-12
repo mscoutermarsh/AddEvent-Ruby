@@ -1,15 +1,15 @@
 require 'add_this_event/service'
 
 class AddThisEvent::Params
-  VALID_SERVICES = %w{outlook google appleical outlookcom yahoo}
+  VALID_SERVICES = %w(outlook google appleical outlookcom yahoo)
   DATE_FORMAT = 'MM/DD/YYYY'
 
   # Valid parameters. Full docs: https://addthisevent.com/api/
-  KEYS = %i{start
-  starttime
-  startext
-  date_format
-  service}
+  KEYS = %i(start
+            starttime
+            startext
+            date_format
+            service)
   # KEYS = %i{start starttime startext end endtime endext title
   #           description location organizer all_day_event date_format
   #           timezone reference service template alarm}
@@ -55,16 +55,16 @@ class AddThisEvent::Params
 
   # Event start date. Mandatory. Format: "MM/DD/YYYY"
   def start
-    params[:starts_at].strftime("%m/%d/%Y")
+    params[:starts_at].strftime('%m/%d/%Y')
   end
 
   def starttime
-    params[:starts_at].strftime("%I:%M:%S")
+    params[:starts_at].strftime('%I:%M:%S')
   end
 
   # AM or PM
   def startext
-    params[:starts_at].strftime("%p")
+    params[:starts_at].strftime('%p')
   end
 
   def title

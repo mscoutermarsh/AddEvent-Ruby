@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-require "bundler/setup"
-require "add_this_event"
+require 'bundler/setup'
+require 'add_this_event'
 
-require "pry"
+require 'pry'
 Pry.start

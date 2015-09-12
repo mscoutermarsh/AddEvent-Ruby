@@ -9,7 +9,7 @@ module AddThisEvent
   define_setting :client_id
 
   def self.url(title:, starts_at:, ends_at:, options: {})
-    options = {client_id: client_id}.merge(options)
+    options = { client_id: client_id }.merge(options)
 
     Url.new(title: title, starts_at: starts_at, ends_at: ends_at,
             options: options).to_s

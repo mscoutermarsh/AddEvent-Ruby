@@ -28,7 +28,7 @@ describe AddThisEvent do
 
     it 'overrides the client_id setting if explicitly passed' do
       described_class.url(starts_at: date_time, ends_at: date_time, title: 'Test Event',
-                          options: {client_id: 'another_fake_id'})
+                          options: { client_id: 'another_fake_id' })
 
       expect(AddThisEvent::Url).to have_received(:new).with(starts_at: date_time,
                                                             ends_at: date_time,

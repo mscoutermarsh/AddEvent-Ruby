@@ -1,5 +1,5 @@
 class AddThisEvent::Service
-  VALID_SERVICES = %w{appleical google outlook outlookcom yahoo}
+  VALID_SERVICES = %w(appleical google outlook outlookcom yahoo)
 
   def initialize(service)
     fail(ArgumentError, "service must set to #{VALID_SERVICES.join(', ')} or nil") unless valid_service?(service)
