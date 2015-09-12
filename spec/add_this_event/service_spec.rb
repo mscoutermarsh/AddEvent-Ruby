@@ -17,21 +17,21 @@ describe AddThisEvent::Service do
     end
   end
 
-  describe '#to_s' do
-    it 'returns an empty string if nil is passed' do
-      expect(described_class.new(nil).to_s).to eq ''
+  describe '#value' do
+    it 'returns nil if nil is passed' do
+      expect(described_class.new(nil).value).to eq nil
     end
 
-    it 'returns an empty string if passed' do
-      expect(described_class.new('').to_s).to eq ''
+    it 'returns an nil if and empty string is passed' do
+      expect(described_class.new('').value).to eq nil
     end
 
     it 'returns service name as a string' do
-      expect(described_class.new('appleical').to_s).to eq 'appleical'
+      expect(described_class.new('appleical').value).to eq 'appleical'
     end
 
     it 'handles services as symbols' do
-      expect(described_class.new(:appleical).to_s).to eq 'appleical'
+      expect(described_class.new(:appleical).value).to eq 'appleical'
     end
   end
 end

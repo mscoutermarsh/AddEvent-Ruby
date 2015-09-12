@@ -6,7 +6,8 @@ class AddThisEvent::Service
     @service = service || ''
   end
 
-  def to_s
+  def value
+    return nil if @service.empty?
     @service.to_s
   end
 
