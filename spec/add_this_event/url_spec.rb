@@ -12,7 +12,5 @@ describe AddThisEvent::Url do
     subject do
       described_class.new(title: title, start_at: start_at, end_at: end_at, options: options).to_s
     end
-
-    it { is_expected.to eq 'buts' }
   end
 end
