@@ -22,5 +22,11 @@ describe AddThisEvent::Params do
     it { is_expected.to include(service: 'appleical') }
     it { is_expected.to include(startext: 'AM') }
     it { is_expected.to include(starttime: '12:00:00') }
+    it { is_expected.to include(timezone: '+00:00') }
+    it { is_expected.to include(title: title) }
+    it { is_expected.to include(location: nil) }
+    it { is_expected.to include(organizer: nil) }
+    it { is_expected.to include(organizer_email: nil) }
+    it { is_expected.to include(all_day_event: false) }
   end
 end
