@@ -6,7 +6,7 @@ module AddThisEvent
     # Create a new AddThisEvent URL!
     #
 
-    # URL_TEMPLATE = Addressable::Template.new("https://addevent.to/dir/{?#{QUERY_PARAMS.join(',')}}")
+    URL_TEMPLATE = Addressable::Template.new("https://addevent.to/dir/{?#{AddThisEvent::Params::KEYS.join(',')}}")
 
     ##
     #  Initialize a new Event.
@@ -21,11 +21,13 @@ module AddThisEvent
       @title = title
       @starts_at = starts_at
       @ends_at = ends_at
+      @params = AddThisEvent::Params.new(options.merge(title: title,
+                                                       starts_at: starts_at,
+                                                       ends_at: ends_at))
     end
 
     def to_s
-      # TODO
-      # URL_TEMPLATE.expand
+      URL_TEMPLATE.expand(@params.to_h).to_s
     end
   end
 end
