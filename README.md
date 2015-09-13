@@ -1,4 +1,7 @@
 # AddThisEvent Ruby API Client
+
+:construction: Work in progress, don't use me yet! :warning:
+
 ![AddThisEvent Ruby API Client](https://raw.githubusercontent.com/mscoutermarsh/AddThisEvent-Ruby/master/addthisevent-ruby.png)
 
 [![Build Status](https://travis-ci.org/mscoutermarsh/AddThisEvent-Ruby.svg)](https://travis-ci.org/mscoutermarsh/AddThisEvent-Ruby) [![Code Climate](https://codeclimate.com/github/mscoutermarsh/AddThisEvent-Ruby/badges/gpa.svg)](https://codeclimate.com/github/mscoutermarsh/AddThisEvent-Ruby) [![Test Coverage](https://codeclimate.com/github/mscoutermarsh/AddThisEvent-Ruby/badges/coverage.svg)](https://codeclimate.com/github/mscoutermarsh/AddThisEvent-Ruby/coverage) [![security](https://hakiri.io/github/mscoutermarsh/AddThisEvent-Ruby/master.svg)](https://hakiri.io/github/mscoutermarsh/AddThisEvent-Ruby/master)
