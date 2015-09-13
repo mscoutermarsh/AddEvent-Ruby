@@ -1,4 +1,5 @@
-# AddThisEvent Ruby
+# AddThisEvent Ruby API Client
+![AddThisEvent Ruby API Client](https://raw.githubusercontent.com/mscoutermarsh/AddThisEvent-Ruby/master/addthisevent-ruby.png)
 
 Ruby client for the AddThisEvent.com API :zap: :smiley:.
 
@@ -28,7 +29,8 @@ Once you have a premium account, you'll need to set your `client_id` in either a
 ```Ruby
 # config/initializers/add_this_event.rb
 AddThisEvent.configuration do |config|
-  config.client_id = 'your_id_goes_here' # Your Client ID (License code) is available here: https://addthisevent.com/account/
+  # Your Client ID (License code) is available here: https://addthisevent.com/account/
+  config.client_id = 'your_id_goes_here' 
 end
 ```
 
