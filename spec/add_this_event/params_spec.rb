@@ -8,6 +8,7 @@ describe AddThisEvent::Params do
 
     let(:params) do
       { title: title,
+        client_id: 'fake_key',
         starts_at: starts_at,
         ends_at: ends_at,
         service: :appleical }
@@ -15,6 +16,14 @@ describe AddThisEvent::Params do
 
     subject do
       described_class.new(params).to_h
+    end
+
+    it 'raises an error if client_id is nil' do
+      params[:client_id] = nil
+
+      expect do
+        subject
+      end.to raise_error ArgumentError
     end
 
     it { is_expected.to include(start: '10/06/1988') }
@@ -28,5 +37,7 @@ describe AddThisEvent::Params do
     it { is_expected.to include(organizer: nil) }
     it { is_expected.to include(organizer_email: nil) }
     it { is_expected.to include(all_day_event: false) }
+    it { is_expected.to include(client: 'fake_key') }
+
   end
 end

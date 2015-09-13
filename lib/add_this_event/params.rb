@@ -11,6 +11,7 @@ module AddThisEvent
 
     # Valid parameters. Full docs: https://addthisevent.com/api/
     KEYS = %i(all_day_event
+              client
               start
               starttime
               startext
@@ -66,6 +67,11 @@ module AddThisEvent
     end
 
     private
+
+    def client
+      return params.client_id unless params.client_id.nil?
+      fail(ArgumentError, 'client_id must not be nil. Visit https://addthisevent.com/account/ to get your client_id (License Code)')
+    end
 
     # Event start date. Mandatory. Format: "MM/DD/YYYY"
     def start
