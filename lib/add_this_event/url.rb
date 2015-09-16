@@ -19,6 +19,8 @@ module AddThisEvent
     # @return [AddThisEvent::Url]
     #
     # @api public
+    #
+    # HELLO this is a test!
 
     def initialize(title:, starts_at:, ends_at:, options: {})
       @title = title
