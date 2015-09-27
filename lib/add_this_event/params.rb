@@ -41,6 +41,7 @@ module AddThisEvent
 
     private
 
+    # The AddThisEvent API client_id
     def client
       return params.client_id unless params.client_id.nil?
       fail(ArgumentError, 'client_id must not be nil. Visit https://addthisevent.com/account/ to get your client_id (License Code)')

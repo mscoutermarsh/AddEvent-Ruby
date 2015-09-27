@@ -5,7 +5,8 @@ require 'add_this_event/params'
 # An AddThisEvent::Url that conforms to the Direct URL API (https://addthisevent.com/api)
 module AddThisEvent
   class Url
-    URL_TEMPLATE = Addressable::Template.new("https://addevent.to/dir/{?#{AddThisEvent::Params::KEYS.join(',')}}")
+    URL_TEMPLATE = Addressable::Template.new("https://addevent.to/dir/{?#{AddThisEvent::Params::KEYS.join(',')}}").freeze
+
     ##
     # Creates an AddThisEvent URL
     #
@@ -19,7 +20,6 @@ module AddThisEvent
     # @return [AddThisEvent::Url]
     #
     # @api public
-
     def initialize(title:, starts_at:, ends_at:, options: {})
       @title = title
       @starts_at = starts_at
@@ -31,7 +31,9 @@ module AddThisEvent
 
     ##
     # Returns the AddThisEvent URL as a string
-
+    # @return [String]
+    #
+    # @api public
     def to_s
       URL_TEMPLATE.expand(@params.to_h).to_s
     end

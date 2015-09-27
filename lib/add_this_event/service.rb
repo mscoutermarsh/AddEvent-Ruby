@@ -2,7 +2,7 @@
 # Validates and provides a Service value for the AddThisEvent API
 module AddThisEvent
   class Service
-    VALID_SERVICES = %w(appleical google outlook outlookcom yahoo)
+    VALID_SERVICES = %w(appleical google outlook outlookcom yahoo).freeze
 
     ##
     # @param [String, Symbol] service
