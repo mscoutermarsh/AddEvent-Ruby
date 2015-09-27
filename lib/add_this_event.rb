@@ -22,7 +22,7 @@ module AddThisEvent
   ##
   # Creates an AddThisEvent URL
   #
-  # @param [String] title
+  # @param [String] title The title of the event (this is what users will see on their calendar)
   # @param [DateTime] starts_at
   #   The <code>DateTime</code> of when the event begins.
   # @param [DateTime] ends_at
@@ -30,10 +30,14 @@ module AddThisEvent
   # @param [Hash] options Optional parameters for creating the event.
   # @option options [String] :client_id The API client id (https://addthisevent.com/account)
   # @option options [Symbol, String] :service Invite format: [:outlook, :google, :appleical, :outlookcom, :yahoo]
+  # @option options [Integer] :alarm Set a reminder alarm before the event. Integer in # of minutes.
   # @option options [String] :organizer Event Organizer's Name
   # @option options [String] :organizer_email Recipient email
   # @option options [String] :description Event description (Max 300 chars recommended)
   # @option options [String] :location Location of the Event. Ex: San Francisco, CA
+  # @option options [String] :reference Tracking parameter for analytics. Ex: "iPhone" or "Newsletter Oct 2016"
+  # @option options [String] :template ID of a AddThisEvent template. Uses the default template if not defined.
+  # @option options [Boolean] :all_day_event All day event. True or False
   #
   # @return [String] AddThisEvent Direct URL
   #
