@@ -1,4 +1,5 @@
 require 'add_this_event/service'
+require 'add_this_event/time'
 require 'forwardable'
 require 'ostruct'
 
@@ -18,6 +19,9 @@ module AddThisEvent
     delegate %i(title organizer description location organizer_email template reference alarm) => :params
 
     def initialize(params)
+      params[:starts_at] = AddThisEvent::Time.standardize_time(params[:starts_at])
+      params[:ends_at] = AddThisEvent::Time.standardize_time(params[:ends_at])
+
       @params = OpenStruct.new(params)
     end
 
@@ -26,6 +30,9 @@ module AddThisEvent
     end
 
     private
+
+    def standarize_time
+    end
 
     def client
       return params.client_id unless params.client_id.nil?
@@ -68,7 +75,7 @@ module AddThisEvent
     end
 
     def timezone
-      params.starts_at.zone
+      'America/New_York'
     end
 
     def all_day_event

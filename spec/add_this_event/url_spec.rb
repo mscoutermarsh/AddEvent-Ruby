@@ -6,7 +6,7 @@ describe AddThisEvent::Url do
     let(:starts_at) { DateTime.new(1988, 10, 06) }
     let(:ends_at) { starts_at }
     let(:options) do
-      { client_id: 'fake-key' }
+      { client_id: 'ahf0v8gfdztlukul0m667907' }
     end
 
     subject do
