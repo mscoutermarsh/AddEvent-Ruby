@@ -5,7 +5,7 @@ require 'add_this_event/params'
 # An AddThisEvent::Url that conforms to the Direct URL API (https://addthisevent.com/api)
 module AddThisEvent
   class Url
-    URL_TEMPLATE = Addressable::Template.new("https://addevent.to/dir/{?#{AddThisEvent::Params::KEYS.join(',')}}").freeze
+    URL_TEMPLATE = Addressable::Template.new("https://addevent.to/dir/{?#{Params::KEYS.join(',')}}").freeze
 
     ##
     # Creates an AddThisEvent URL
