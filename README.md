@@ -30,7 +30,7 @@ Or install it yourself as:
 
 You'll need an **AddThisEvent premium account** to use the API (sign up here: [addthisevent.com](https://addthisevent.com)).
 
-Once you have a premium account, you'll need to set your `client_id` in either an initializer (Rails), or by passing it as an `option` each time when creating a new event URL.
+Once you have a premium account, you'll need to set your `client_id` in an initializer (Rails), as an environment variable `ADD_THIS_EVENT_CLIENT_ID` or by passing it as an `option` each time when creating a new event URL.
 ```Ruby
 # config/initializers/add_this_event.rb
 AddThisEvent.configuration do |config|
