@@ -28,16 +28,37 @@ Or install it yourself as:
 
 ## Usage
 
-You'll need an **AddThisEvent premium account** to use the API (sign up here: [addthisevent.com](https://addthisevent.com)). 
+You'll need an **AddThisEvent premium account** to use the API (sign up here: [addthisevent.com](https://addthisevent.com)).
 
 Once you have a premium account, you'll need to set your `client_id` in either an initializer (Rails), or by passing it as an `option` each time when creating a new event URL.
 ```Ruby
 # config/initializers/add_this_event.rb
 AddThisEvent.configuration do |config|
   # Your Client ID (License code) is available here: https://addthisevent.com/account/
-  config.client_id = 'your_id_goes_here' 
+  config.client_id = 'your_id_goes_here'
 end
 ```
+
+Then to create an event, pass the `title`, `starts_at`, `ends_at` and `options` to `AddThisEvent.url`
+
+```Ruby
+party_starts = DateTime.new(2016, 10, 2, 18, 0, 0, '+7')
+party_ends = DateTime.new(2016, 10, 3, 3, 0, 0, '+7')
+
+event_options = {
+  service: :google, # or 'google' works too!
+  organizer: 'Mike',
+  organizer_email: 'coutermarsh.mike@gmail.com',
+  alert: 15, # set alarm for 15 minutes before the party starts
+  description: "A little get together to celebrate DHH's birthday. BYORG (Bring your own ruby gems)",
+  location: "Ruby Bar, San Francisco CA"
+}
+
+url = AddThisEvent.url(title: "DHH's Birthday Bash", starts_at: party_starts,
+                       ends_at: party_ends, options: event_options)
+```
+
+To see the full list of available options, see the documentation here (TODO).
 
 ## Development
 
@@ -47,7 +68,7 @@ To install this gem onto your local machine, run `bundle exec rake install`.
 
 ## Contributing :heart:
 
-Want to make this better? Great! :smile:  
+Want to make this better? Great! :smile:
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/mscoutermarsh/AddThisEvent-Ruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
