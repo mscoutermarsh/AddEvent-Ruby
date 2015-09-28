@@ -2,9 +2,8 @@ require 'add_this_event/service'
 require 'forwardable'
 require 'ostruct'
 
-##
-# Takes in a hash of parameters and formats them for use with the AddThisEvent API
 module AddThisEvent
+  # Takes in a hash of parameters and formats them for use with the AddThisEvent API
   class Params
     extend Forwardable
 
@@ -44,7 +43,8 @@ module AddThisEvent
     # The AddThisEvent API client_id
     def client
       return params.client_id unless params.client_id.nil?
-      fail(ArgumentError, 'client_id must not be nil. Visit https://addthisevent.com/account/ to get your client_id (License Code)')
+      fail(ArgumentError, 'client_id must not be nil. ' \
+           'Visit https://addthisevent.com/account/ to get your client_id (License Code)')
     end
 
     # Event start date. Mandatory. Format: "MM/DD/YYYY"
