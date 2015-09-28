@@ -35,7 +35,8 @@ module AddThisEvent
   #    location: "Ruby Bar, San Francisco CA"
   #  }
   #
-  #  url = AddThisEvent.url(title: "DHH's Birthday Bash", starts_at: party_starts, ends_at: party_ends, options: event_options)
+  #  url = AddThisEvent.url(title: "DHH's Birthday Bash", starts_at: party_starts,
+  #                         ends_at: party_ends, options: event_options)
   #
   # == Time Zones
   # To keep things simple, this gem converts the <code>starts_at</code> and <code>ends_at</code>
