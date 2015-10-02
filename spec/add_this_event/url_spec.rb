@@ -17,7 +17,7 @@ describe AddThisEvent::Url do
       expect(subject).to eq 'https://addevent.to/dir/?all_day_event=false&client=fake-key' \
                             '&date_format=MM%2FDD%2FYYYY&end=10%2F06%2F1988&endext=AM' \
                             '&endtime=12%3A00%3A00&start=10%2F06%2F1988&startext=AM' \
-                            '&starttime=12%3A00%3A00&timezone=%2B00%3A00&title=Event%20Title'
+                            '&starttime=12%3A00%3A00&timezone=Africa%2FCasablanca&title=Event%20Title'
     end
   end
 end
