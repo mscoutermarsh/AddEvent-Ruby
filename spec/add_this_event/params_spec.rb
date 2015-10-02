@@ -38,7 +38,7 @@ describe AddThisEvent::Params do
     it { is_expected.to include(end: '10/06/1988') }
     it { is_expected.to include(endext: 'AM') }
     it { is_expected.to include(endtime: '12:00:00') }
-    it { is_expected.to include(timezone: '+00:00') }
+    it { is_expected.to include(timezone: 'Africa/Casablanca') }
     it { is_expected.to include(title: params[:title]) }
     it { is_expected.to include(location: params[:location]) }
     it { is_expected.to include(organizer: params[:organizer]) }

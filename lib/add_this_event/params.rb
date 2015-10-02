@@ -47,33 +47,41 @@ module AddThisEvent
            'Visit https://addthisevent.com/account/ to get your client_id (License Code)')
     end
 
+    def starts_at_utc
+      @starts_at_utc ||= params.starts_at.new_offset(0)
+    end
+
+    def ends_at_utc
+      @ends_at_utc ||= params.ends_at.new_offset(0)
+    end
+
     # Event start date. Mandatory. Format: "MM/DD/YYYY"
     def start
-      params.starts_at.strftime('%m/%d/%Y')
+      starts_at_utc.strftime('%m/%d/%Y')
     end
 
     # Event end date. Mandatory. Format: "MM/DD/YYYY"
     def end
-      params.ends_at.strftime('%m/%d/%Y')
+      ends_at_utc.strftime('%m/%d/%Y')
     end
 
     # Event start time. Mandatory. Format: "HH/MM/SS"
     def starttime
-      params.starts_at.strftime('%I:%M:%S')
+      starts_at_utc.strftime('%I:%M:%S')
     end
 
     # Event end time. Mandatory. Format: "HH/MM/SS"
     def endtime
-      params.ends_at.strftime('%I:%M:%S')
+      ends_at_utc.strftime('%I:%M:%S')
     end
 
     # AM or PM
     def startext
-      params.starts_at.strftime('%p')
+      starts_at_utc.strftime('%p')
     end
 
     def endext
-      params.ends_at.strftime('%p')
+      ends_at_utc.strftime('%p')
     end
 
     def date_format
@@ -84,8 +92,11 @@ module AddThisEvent
       AddThisEvent::Service.new(params[:service]).value
     end
 
+    # The AddThisEvent API only accepts location timezones. It's impossible to determine this
+    # accurately from a Ruby DateTime object. So we'll always send the times as UTC to the API.
     def timezone
-      params.starts_at.zone
+      # Casablanca is a 00:00 neutral zone with no DST. Their TZID is "Africa/Casablanca".
+      'Africa/Casablanca'
     end
 
     def all_day_event
