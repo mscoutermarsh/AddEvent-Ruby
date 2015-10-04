@@ -67,12 +67,12 @@ module AddThisEvent
 
     # Event start time. Mandatory. Format: "HH/MM/SS"
     def starttime
-      starts_at_utc.strftime('%I:%M:%S')
+      starts_at_utc.strftime('%H:%M:%S')
     end
 
     # Event end time. Mandatory. Format: "HH/MM/SS"
     def endtime
-      ends_at_utc.strftime('%I:%M:%S')
+      ends_at_utc.strftime('%H:%M:%S')
     end
 
     # AM or PM

@@ -34,10 +34,10 @@ describe AddThisEvent::Params do
     it { is_expected.to include(service: 'appleical') }
     it { is_expected.to include(start: '10/06/1988') }
     it { is_expected.to include(startext: 'AM') }
-    it { is_expected.to include(starttime: '12:00:00') }
+    it { is_expected.to include(starttime: '00:00:00') }
     it { is_expected.to include(end: '10/06/1988') }
     it { is_expected.to include(endext: 'AM') }
-    it { is_expected.to include(endtime: '12:00:00') }
+    it { is_expected.to include(endtime: '00:00:00') }
     it { is_expected.to include(timezone: 'Africa/Casablanca') }
     it { is_expected.to include(title: params[:title]) }
     it { is_expected.to include(location: params[:location]) }
