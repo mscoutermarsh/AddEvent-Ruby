@@ -2,8 +2,8 @@ require 'add_this_event/service'
 require 'forwardable'
 require 'ostruct'
 
-module AddThisEvent
-  # Takes in a hash of parameters and formats them for use with the AddThisEvent API
+module AddEvent
+  # Takes in a hash of parameters and formats them for use with the AddEvent API
   class Params
     extend Forwardable
 
@@ -21,7 +21,7 @@ module AddThisEvent
     ##
     # @param [Hash] params
     #
-    # @return [AddThisEvent::Params]
+    # @return [AddEvent::Params]
     #
     # @api public
     def initialize(params)
@@ -29,7 +29,7 @@ module AddThisEvent
     end
 
     ##
-    # Returns a hash with only valid params for the AddThisEvent API
+    # Returns a hash with only valid params for the AddEvent API
     #
     # @return [Hash]
     #
@@ -40,7 +40,7 @@ module AddThisEvent
 
     private
 
-    # The AddThisEvent API client_id
+    # The AddEvent API client_id
     def client
       return params.client_id unless params.client_id.nil?
       fail(ArgumentError, 'client_id must not be nil. ' \
@@ -89,10 +89,10 @@ module AddThisEvent
     end
 
     def service
-      AddThisEvent::Service.new(params[:service]).value
+      AddEvent::Service.new(params[:service]).value
     end
 
-    # The AddThisEvent API only accepts location timezones. It's impossible to determine this
+    # The AddEvent API only accepts location timezones. It's impossible to determine this
     # accurately from a Ruby DateTime object. So we'll always send the times as UTC to the API.
     def timezone
       # Casablanca is a 00:00 neutral zone with no DST. Their TZID is "Africa/Casablanca".

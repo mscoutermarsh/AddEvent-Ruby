@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe AddThisEvent do
+describe AddEvent do
   it 'has a version number' do
-    expect(AddThisEvent::VERSION).not_to be nil
+    expect(AddEvent::VERSION).not_to be nil
   end
 
   describe '.url' do
@@ -10,17 +10,17 @@ describe AddThisEvent do
     let(:date_time) { DateTime.parse('10/06/1988') }
 
     before do
-      AddThisEvent.configuration do |config|
+      AddEvent.configuration do |config|
         config.client_id = 'fake_id'
       end
 
-      allow(AddThisEvent::Url).to receive(:new).and_return url_double
+      allow(AddEvent::Url).to receive(:new).and_return url_double
     end
 
     it 'uses the client_id setting if not explicitly passed' do
       described_class.url(starts_at: date_time, ends_at: date_time, title: 'Test Event')
 
-      expect(AddThisEvent::Url).to have_received(:new).with(starts_at: date_time,
+      expect(AddEvent::Url).to have_received(:new).with(starts_at: date_time,
                                                             ends_at: date_time,
                                                             title: 'Test Event',
                                                             options: hash_including(client_id: 'fake_id'))
@@ -30,7 +30,7 @@ describe AddThisEvent do
       described_class.url(starts_at: date_time, ends_at: date_time, title: 'Test Event',
                           options: { client_id: 'another_fake_id' })
 
-      expect(AddThisEvent::Url).to have_received(:new).with(starts_at: date_time,
+      expect(AddEvent::Url).to have_received(:new).with(starts_at: date_time,
                                                             ends_at: date_time,
                                                             title: 'Test Event',
                                                             options: hash_including(client_id: 'another_fake_id'))

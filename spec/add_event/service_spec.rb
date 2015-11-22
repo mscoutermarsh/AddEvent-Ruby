@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AddThisEvent::Service do
+describe AddEvent::Service do
   describe '#new' do
     it 'raises ArgumentError if an invalid service is passed' do
       expect do

@@ -1,6 +1,6 @@
 ##
-# Validates and provides a Service value for the AddThisEvent API
-module AddThisEvent
+# Validates and provides a Service value for the AddEvent API
+module AddEvent
   class Service
     VALID_SERVICES = %w(appleical google outlook outlookcom yahoo).freeze
 
@@ -8,7 +8,7 @@ module AddThisEvent
     # @param [String, Symbol] service
     #   The type of service to create the event for
     #
-    # @return [AddThisEvent::Service]
+    # @return [AddEvent::Service]
     #
     # @api public
     def initialize(service)

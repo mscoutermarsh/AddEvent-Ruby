@@ -1,14 +1,16 @@
-# AddThisEvent Ruby API Client
+# AddEvent Ruby API Client
+
+(Formally known as AddThisEvent)
 
 :construction: Work in progress, don't use me yet! :warning:
 
-![AddThisEvent Ruby API Client](https://raw.githubusercontent.com/mscoutermarsh/AddThisEvent-Ruby/master/addthisevent-ruby.png)
+![AddEvent Ruby API Client](https://raw.githubusercontent.com/mscoutermarsh/AddEvent-Ruby/master/addthisevent-ruby.png)
 
-[![Build Status](https://travis-ci.org/mscoutermarsh/AddThisEvent-Ruby.svg)](https://travis-ci.org/mscoutermarsh/AddThisEvent-Ruby) [![Code Climate](https://codeclimate.com/github/mscoutermarsh/AddThisEvent-Ruby/badges/gpa.svg)](https://codeclimate.com/github/mscoutermarsh/AddThisEvent-Ruby) [![Test Coverage](https://codeclimate.com/github/mscoutermarsh/AddThisEvent-Ruby/badges/coverage.svg)](https://codeclimate.com/github/mscoutermarsh/AddThisEvent-Ruby/coverage) [![security](https://hakiri.io/github/mscoutermarsh/AddThisEvent-Ruby/master.svg)](https://hakiri.io/github/mscoutermarsh/AddThisEvent-Ruby/master)
+[![Build Status](https://travis-ci.org/mscoutermarsh/AddEvent-Ruby.svg)](https://travis-ci.org/mscoutermarsh/AddEvent-Ruby) [![Code Climate](https://codeclimate.com/github/mscoutermarsh/AddEvent-Ruby/badges/gpa.svg)](https://codeclimate.com/github/mscoutermarsh/AddEvent-Ruby) [![Test Coverage](https://codeclimate.com/github/mscoutermarsh/AddEvent-Ruby/badges/coverage.svg)](https://codeclimate.com/github/mscoutermarsh/AddEvent-Ruby/coverage) [![security](https://hakiri.io/github/mscoutermarsh/AddEvent-Ruby/master.svg)](https://hakiri.io/github/mscoutermarsh/AddEvent-Ruby/master)
 
-Ruby client for the AddThisEvent.com API :zap: :smiley:.
+Ruby client for the AddEvent.com API :zap: :smiley:.
 
-Makes it super easy to create AddThisEvent URL's from Ruby.
+Makes it super easy to create AddEvent URL's from Ruby.
 
 ## Installation
 
@@ -28,22 +30,22 @@ Or install it yourself as:
 
 ## Usage
 
-You'll need an **AddThisEvent premium account** to use the API (sign up here: [addthisevent.com](https://addthisevent.com)).
+You'll need an **AddEvent premium account** to use the API (sign up here: [addevent.com](https://addevent.com)).
 
 Once you have a premium account, you'll need to set your `client_id` in an initializer (Rails), as an environment variable `ADD_THIS_EVENT_CLIENT_ID` or by passing it as an `option` each time when creating a new event URL.
 ```Ruby
-# config/initializers/add_this_event.rb
-AddThisEvent.configuration do |config|
-  # Your Client ID (License code) is available here: https://addthisevent.com/account/
+# config/initializers/add_event.rb
+AddEvent.configuration do |config|
+  # Your Client ID (License code) is available here: https://addevent.com/account/
   config.client_id = 'your_id_goes_here'
 end
 ```
 
-Then to create an event, pass the `title`, `starts_at`, `ends_at` and `options` to `AddThisEvent.url`
+Then to create an event, pass the `title`, `starts_at`, `ends_at` and `options` to `AddEvent.url`
 
 ```Ruby
-party_starts = DateTime.new(2016, 10, 2, 18, 0, 0, '+7')
-party_ends = DateTime.new(2016, 10, 3, 3, 0, 0, '+7')
+party_starts = DateTime.new(2016, 10, 2, 18, 0, 0, '-7')
+party_ends = DateTime.new(2016, 10, 3, 3, 0, 0, '-7')
 
 event_options = {
   service: :google, # or 'google' works too!
@@ -54,7 +56,7 @@ event_options = {
   location: "Ruby Bar, San Francisco CA"
 }
 
-url = AddThisEvent.url(title: "DHH's Birthday Bash", starts_at: party_starts,
+url = AddEvent.url(title: "DHH's Birthday Bash", starts_at: party_starts,
                        ends_at: party_ends, options: event_options)
 ```
 
@@ -70,7 +72,7 @@ To install this gem onto your local machine, run `bundle exec rake install`.
 
 Want to make this better? Great! :smile:
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/mscoutermarsh/AddThisEvent-Ruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/mscoutermarsh/AddEvent-Ruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License

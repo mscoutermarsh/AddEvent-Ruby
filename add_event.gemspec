@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'add_this_event/version'
+require 'add_event/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'add_this_event'
-  spec.version       = AddThisEvent::VERSION
+  spec.name          = 'add_event'
+  spec.version       = AddEvent::VERSION
   spec.authors       = ['Mike Coutermarsh']
   spec.email         = ['coutermarsh.mike@gmail.com']
 
-  spec.summary       = 'Ruby client for using the AddThisEvent API (https://addthisevent.com/api)'
-  spec.description   = 'Ruby client for using the AddThisEvent API (https://addthisevent.com/api)'
-  spec.homepage      = 'https://github.com/mscoutermarsh/AddThisEvent-Ruby'
+  spec.summary       = 'Ruby client for using the AddEvent API (https://addevent.com/api)'
+  spec.description   = 'Ruby client for using the AddEvent API (https://addevent.com/api)'
+  spec.homepage      = 'https://github.com/mscoutermarsh/AddEvent-Ruby'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features|bin)/}) }

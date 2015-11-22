@@ -2,6 +2,6 @@ require 'codeclimate-test-reporter'
 CodeClimate::TestReporter.start
 
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'add_this_event'
+require 'add_event'
 require 'date'
 require 'pry'

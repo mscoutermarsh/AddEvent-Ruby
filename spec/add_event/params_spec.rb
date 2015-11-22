@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AddThisEvent::Params do
+describe AddEvent::Params do
   describe '#to_h' do
     let(:starts_at) { DateTime.new(1988, 10, 06) }
     let(:ends_at) { starts_at }

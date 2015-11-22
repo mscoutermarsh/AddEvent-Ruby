@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AddThisEvent::Url do
+describe AddEvent::Url do
   describe '#to_s' do
     let(:title) { 'Event Title' }
     let(:starts_at) { DateTime.new(1988, 10, 06) }

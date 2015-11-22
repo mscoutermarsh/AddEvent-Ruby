@@ -1,26 +1,26 @@
-require 'add_this_event/version'
-require 'add_this_event/url'
+require 'add_event/version'
+require 'add_event/url'
 require 'date'
 require 'helpers/configuration'
 
 ##
-# Ruby Client for the AddThisEvent API. Makes it easy to generate event invites from Ruby.
-module AddThisEvent
+# Ruby Client for the AddEvent API. Makes it easy to generate event invites from Ruby.
+module AddEvent
   extend Configuration
 
   ##
-  # Set the API client ID. (https://addthisevent.com/account)
+  # Set the API client ID. (https://addevent.com/account)
   #
   # == Usage
-  #  # config/initializers/add_this_event.rb
-  #  AddThisEvent.configuration do |config|
-  #    # Your Client ID (License code) is available here: https://addthisevent.com/account/
+  #  # config/initializers/add_event.rb
+  #  AddEvent.configuration do |config|
+  #    # Your Client ID (License code) is available here: https://addevent.com/account/
   #    config.client_id = 'your_id_goes_here'
   #  end
   define_setting :client_id
 
   ##
-  # Creates an AddThisEvent URL
+  # Creates an AddEvent URL
   #
   # == Usage
   #  party_starts = DateTime.new(2016, 10, 2, 18, 0, 0, '+7')
@@ -35,12 +35,12 @@ module AddThisEvent
   #    location: "Ruby Bar, San Francisco CA"
   #  }
   #
-  #  url = AddThisEvent.url(title: "DHH's Birthday Bash", starts_at: party_starts,
-  #                         ends_at: party_ends, options: event_options)
+  #  url = AddEvent.url(title: "DHH's Birthday Bash", starts_at: party_starts,
+  #                     ends_at: party_ends, options: event_options)
   #
   # == Time Zones
   # To keep things simple, this gem converts the <code>starts_at</code> and <code>ends_at</code>
-  # to UTC and sends all times to AddThisEvent as UTC. When the end user adds the event to their
+  # to UTC and sends all times to AddEvent as UTC. When the end user adds the event to their
   # calendar, it will automatically be converted to their local timezone.
   #
   # @overload url(title, starts_at, ends_at, options)
@@ -70,12 +70,12 @@ module AddThisEvent
   #   @option options [String] :reference
   #     Tracking parameter for analytics. Ex: <code>"iPhone"</code> or <code>"Newsletter Oct 2016"</code>
   #   @option options [String] :template
-  #     ID of a AddThisEvent template. Uses the default template if not defined.
-  #     You can get this ID from the AddThisEvent dashboard after creating a template.
+  #     ID of a AddEvent template. Uses the default template if not defined.
+  #     You can get this ID from the AddEvent dashboard after creating a template.
   #   @option options [Boolean] :all_day_event (false)
   #     Is it an all day event? True or False
   #
-  # @return [String] AddThisEvent Direct URL
+  # @return [String] AddEvent Direct URL
   #
   # @api public
   def self.url(title:, starts_at:, ends_at:, options: {})
