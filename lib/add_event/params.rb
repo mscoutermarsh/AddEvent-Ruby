@@ -1,4 +1,4 @@
-require 'add_this_event/service'
+require 'add_event/service'
 require 'forwardable'
 require 'ostruct'
 

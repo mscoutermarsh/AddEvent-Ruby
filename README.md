@@ -17,7 +17,7 @@ Makes it super easy to create AddEvent URL's from Ruby.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'add_this_event'
+gem 'add_event'
 ```
 
 And then execute:
@@ -26,13 +26,13 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install add_this_event
+    $ gem install add_event
 
 ## Usage
 
 You'll need an **AddEvent premium account** to use the API (sign up here: [addevent.com](https://addevent.com)).
 
-Once you have a premium account, you'll need to set your `client_id` in an initializer (Rails), as an environment variable `ADD_THIS_EVENT_CLIENT_ID` or by passing it as an `option` each time when creating a new event URL.
+Once you have a premium account, you'll need to set your `client_id` in an initializer (Rails), as an environment variable `ADD_EVENT_CLIENT_ID` or by passing it as an `option` each time when creating a new event URL.
 ```Ruby
 # config/initializers/add_event.rb
 AddEvent.configuration do |config|

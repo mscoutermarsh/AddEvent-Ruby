@@ -79,7 +79,7 @@ module AddEvent
   #
   # @api public
   def self.url(title:, starts_at:, ends_at:, options: {})
-    options = { client_id: client_id || ENV['ADD_THIS_EVENT_CLIENT_ID'] }.merge(options)
+    options = { client_id: client_id || ENV['ADD_EVENT_CLIENT_ID'] }.merge(options)
 
     Url.new(title: title, starts_at: starts_at, ends_at: ends_at,
             options: options).to_s
