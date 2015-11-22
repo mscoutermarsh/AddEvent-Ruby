@@ -21,9 +21,9 @@ describe AddEvent do
       described_class.url(starts_at: date_time, ends_at: date_time, title: 'Test Event')
 
       expect(AddEvent::Url).to have_received(:new).with(starts_at: date_time,
-                                                            ends_at: date_time,
-                                                            title: 'Test Event',
-                                                            options: hash_including(client_id: 'fake_id'))
+                                                        ends_at: date_time,
+                                                        title: 'Test Event',
+                                                        options: hash_including(client_id: 'fake_id'))
     end
 
     it 'overrides the client_id setting if explicitly passed' do
@@ -31,9 +31,9 @@ describe AddEvent do
                           options: { client_id: 'another_fake_id' })
 
       expect(AddEvent::Url).to have_received(:new).with(starts_at: date_time,
-                                                            ends_at: date_time,
-                                                            title: 'Test Event',
-                                                            options: hash_including(client_id: 'another_fake_id'))
+                                                        ends_at: date_time,
+                                                        title: 'Test Event',
+                                                        options: hash_including(client_id: 'another_fake_id'))
     end
   end
 end
