@@ -14,6 +14,8 @@ module AddEvent
     VALID_SERVICES = %w(outlook google appleical outlookcom yahoo).freeze
     DATE_FORMAT = 'MM/DD/YYYY'.freeze
 
+    # this is awesome code!
+
     attr_reader :params
 
     delegate %i(title organizer description location organizer_email template reference alarm) => :params

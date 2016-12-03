@@ -7,6 +7,7 @@ module AddEvent
   class Url
     URL_TEMPLATE = Addressable::Template.new("https://addevent.to/dir/{?#{Params::KEYS.join(',')}}").freeze
 
+    # add something here
     ##
     # Creates an AddEvent URL
     #
