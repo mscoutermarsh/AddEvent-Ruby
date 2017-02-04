@@ -4,6 +4,9 @@ module AddEvent
   class Service
     VALID_SERVICES = %w(appleical google outlook outlookcom yahoo).freeze
 
+    # im writing some awesome code!
+    # for my pull request example!
+
     ##
     # @param [String, Symbol] service
     #   The type of service to create the event for
