@@ -6,6 +6,7 @@ module AddEvent
 
     # im writing some awesome code!
     # for my pull request example!
+    # make a change
 
     ##
     # @param [String, Symbol] service
